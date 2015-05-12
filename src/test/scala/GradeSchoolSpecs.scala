@@ -8,7 +8,6 @@ class GradeSchoolSpecs extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("add student") {
-    pending
     school.add("Aimee", 2)
     school.db should be (Map(2 -> Seq("Aimee")))
   }

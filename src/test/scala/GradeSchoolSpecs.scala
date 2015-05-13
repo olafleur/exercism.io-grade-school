@@ -33,7 +33,6 @@ class GradeSchoolSpecs extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("get students in a non-existant grade") {
-    pending
     school.grade(1) should be (Seq())
   }
 

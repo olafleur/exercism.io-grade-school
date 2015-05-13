@@ -6,7 +6,13 @@ class School {
   def grade(i: Int) = Seq()
 
   def add(s: String, i: Int) = {
-    db = db.updated(i, List(s))
+    var maliste = List[String]()
+
+    if(db.get(i).isDefined) {
+      maliste = db.get(i).get
+    }
+
+    db = db.updated(i, maliste ::: List(s))
   }
 
 }

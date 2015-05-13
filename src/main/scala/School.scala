@@ -3,7 +3,7 @@ class School {
 
   def sorted = Map()
 
-  def grade(i: Int) = Seq()
+  def grade(i: Int) = db.get(i).get
 
   def add(s: String, i: Int) = {
     var maliste = List[String]()

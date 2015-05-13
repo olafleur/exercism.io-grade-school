@@ -1,16 +1,26 @@
 class School {
   var db = Map[Int, List[String]]()
 
-  def sorted = Map()
+  def sorted = {
+    var sorteddb = Map[Int, List[String]]()
 
-  def grade(i: Int) = {
-    var maliste = List[String]()
-
-    if(db.get(i).isDefined) {
-      maliste = db.get(i).get
+    for (i <- 1 to 10)
+    {
+      if (db.get(i).isDefined)
+      {
+        sorteddb = sorteddb.updated(i, db.get(i).get.sorted)
+      }
     }
 
-    maliste
+    sorteddb
+  }
+
+  def grade(i: Int) = {
+    if (db.get(i).isDefined) {
+      db.get(i).get
+    } else {
+      List.empty[String]
+    }
   }
 
   def add(s: String, i: Int) = {
